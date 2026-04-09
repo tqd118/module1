@@ -1,0 +1,60 @@
+❯ ssh-keygen -t ed25519 -C "tqd2081@gmail.com"
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/Hequa/.ssh/id_ed25519):
+Created directory '/home/Hequa/.ssh'.
+Enter passphrase for "/home/Hequa/.ssh/id_ed25519" (empty for no passphrase): 
+Enter same passphrase again:
+Your identification has been saved in /home/Hequa/.ssh/id_ed25519
+Your public key has been saved in /home/Hequa/.ssh/id_ed25519.pub 
+The key fingerprint is:
+SHA256:9Olh+4EXqP3ZBS++n91dADCbjEp0hnqdd7QJd4fugMs tqd2081@gmail.com
+The key's randomart image is:
++--[ED25519 256]--+
+|      ..o o    . |
+|     ..o o.=o o .|
+|     ...o.+=.= . |
+|    ...oo.oo=..  |
+|     .. So*o.oo  |
+|         =E+ ..+ |
+|        . = o . +|
+|           + = o*|
+|            + ++=|
++----[SHA256]-----+
+❯ ssh-add ~/.ssh/id_ed25519
+Enter passphrase for /home/Hequa/.ssh/id_ed25519:
+Identity added: /home/Hequa/.ssh/id_ed25519 (tqd2081@gmail.com)
+❯ ssh-keygen -lf ~/.ssh/id_ed25519.pub
+
+256 SHA256:9Olh+4EXqP3ZBS++n91dADCbjEp0hnqdd7QJd4fugMs tqd2081@gmail.com (ED25519)
+❯ wl-copy < ~/.ssh/id_ed25519.pub
+
+❯ ssh -T git@github.com
+
+Enter passphrase for key '/home/Hequa/.ssh/id_ed25519':
+Hi tqd118! You've successfully authenticated, but GitHub does not provide shell access.
+❯ md temp; cd temp
+❯ git clone git@github.com:tqd118/Git_Practice
+Cloning into 'Git_Practice'...
+Enter passphrase for key '/home/Hequa/.ssh/id_ed25519':
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 6 (delta 0), reused 6 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (6/6), done.
+❯ cd Git_Practice
+❯ touch fileFromSSH.txt
+❯ git add fileFromSSH.txt
+❯ git commit -m"chore: add a file to complete the SHH Practice"
+[feature-branch-1 c8e3222] chore: add a file to complete the SHH Practice
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 fileFromSSH.txt
+❯ git push origin feature-branch-1
+Enter passphrase for key '/home/Hequa/.ssh/id_ed25519':
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 293 bytes | 293.00 KiB/s, done.
+Total 3 (delta 0), reused 1 (delta 0), pack-reused 0 (from 0)
+To github.com:tqd118/Git_Practice
+   394595b..c8e3222  feature-branch-1 -> feature-branch-1

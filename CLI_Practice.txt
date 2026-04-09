@@ -1,0 +1,13 @@
+❯ mkdir CLI_Practice
+❯ cd CLI_Practice
+❯ touch commands.txt
+❯ nvim commands.txt
+❯ ls -a
+.  ..  commands.txt
+❯ mv commands.txt notes.txt
+❯ mkdir subdirectory
+❯ mv notes.txt subdirectory
+❯ rm -r subdirectory
+❯ date >> log.txt
+❯ cat log.txt
+Thu Apr  9 17:02:13 +03 2026
