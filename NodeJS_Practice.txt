@@ -1,0 +1,142 @@
+❯ node -v
+v22.22.1
+❯ md nodeApp
+❯ cd nodeApp
+❯ npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help init` for definitive documentation on these fields and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (nodeapp)
+version: (1.0.0)
+description:
+entry point: (index.js)
+test command:
+git repository:
+keywords:
+author:
+license: (ISC)
+type: (commonjs)
+About to write to /home/Hequa/nodeApp/package.json:
+
+{
+  "name": "nodeapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
+
+
+Is this OK? (yes) yes
+❯ npm i express
+
+added 65 packages, and audited 66 packages in 8s
+
+22 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+❯ v server.js
+❯ cat server.js
+const express = require('express');
+const app = express();
+const PORT = 3000;
+
+app.get('/', (request, response) => {
+    response.send('Hello World!');
+});
+
+app.listen(PORT, () => console.log('Server running'));
+❯ node server.js
+Server running
+^C
+❯ v server.js
+❯ cat server.js
+const express = require('express');
+const app = express();
+const PORT = 3000;
+
+app.get('/', (request, response) => {
+    response.send('Hello World!');
+    console.log('Response requested');
+});
+
+app.listen(PORT, () => console.log('Server running'));
+❯ node server.js
+Server running
+Response requested
+Response requested
+Response requested
+^C
+❯ nvm -v
+0.40.4
+❯ nvm install node
+Downloading and installing node v25.9.0...
+Downloading https://nodejs.org/dist/v25.9.0/node-v25.9.0-linux-x64.tar.xz...
+######################################################################################################################## 100.0%
+Computing checksum with sha256sum
+Checksums matched!
+Now using node v25.9.0 (npm v11.12.1)
+Creating default alias: default -> node (-> v25.9.0 *)
+❯ nvm ls
+->      v25.9.0
+         system (-> v22.22.1)
+default -> node (-> v25.9.0 *)
+iojs -> N/A (default)
+node -> stable (-> v25.9.0 *) (default)
+stable -> 25.9 (-> v25.9.0 *) (default)
+unstable -> N/A (default)
+lts/* -> lts/krypton (-> N/A)
+lts/argon -> v4.9.1 (-> N/A)
+lts/boron -> v6.17.1 (-> N/A)
+lts/carbon -> v8.17.0 (-> N/A)
+lts/dubnium -> v10.24.1 (-> N/A)
+lts/erbium -> v12.22.12 (-> N/A)
+lts/fermium -> v14.21.3 (-> N/A)
+lts/gallium -> v16.20.2 (-> N/A)
+lts/hydrogen -> v18.20.8 (-> N/A)
+lts/iron -> v20.20.2 (-> N/A)
+lts/jod -> v22.22.2 (-> N/A)
+lts/krypton -> v24.14.1 (-> N/A)
+❯ nvm use system
+Now using system version of node: v22.22.1 (npm v11.12.0)
+❯ nvm ls
+        v25.9.0
+->       system (-> v22.22.1)
+default -> node (-> v25.9.0 *)
+iojs -> N/A (default)
+node -> stable (-> v25.9.0 *) (default)
+stable -> 25.9 (-> v25.9.0 *) (default)
+unstable -> N/A (default)
+lts/* -> lts/krypton (-> N/A)
+lts/argon -> v4.9.1 (-> N/A)
+lts/boron -> v6.17.1 (-> N/A)
+lts/carbon -> v8.17.0 (-> N/A)
+lts/dubnium -> v10.24.1 (-> N/A)
+lts/erbium -> v12.22.12 (-> N/A)
+lts/fermium -> v14.21.3 (-> N/A)
+lts/gallium -> v16.20.2 (-> N/A)
+lts/hydrogen -> v18.20.8 (-> N/A)
+lts/iron -> v20.20.2 (-> N/A)
+lts/jod -> v22.22.2 (-> N/A)
+lts/krypton -> v24.14.1 (-> N/A)
+❯ node server.js
+Server running
+Response requested
+^C
+❯ nvm use default
+Now using node v25.9.0 (npm v11.12.1)
+❯ node server.js
+Server running
+Response requested
+^C
